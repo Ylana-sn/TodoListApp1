@@ -48,5 +48,20 @@ namespace TodoListApp1.Managers
                 Console.WriteLine("Task description cannot be empty.");
             }
         }
+        public bool ToggleTaskCompletion(int taskId)
+        {
+            var taskToToggle = _todoList.FirstOrDefault(t => t.Id == taskId);
+            if (taskToToggle != null)
+            {
+                taskToToggle.IsCompleted = !taskToToggle.IsCompleted;
+                Console.WriteLine($"Task {taskId} completion status updated.");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine($"Task with ID {taskId} not found."); 
+                return false;
+            }
+        }
     }
 }
