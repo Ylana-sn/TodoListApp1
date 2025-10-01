@@ -7,9 +7,12 @@ namespace TodoListApp
     {
         static void Main (string[] args)
         {
-            Console.WriteLine ("Welcome to the To-Do List Application!");
+            Console.WriteLine ("Welcome to the Enhanced To-Do List!");
+
             var todoManager = new TodoListManager();
+
             todoManager.DisplayTodoList();
+            
             Console.WriteLine("\nPress any key to exit…");
             Console.ReadKey();
         }
